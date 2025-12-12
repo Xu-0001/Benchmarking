@@ -1,0 +1,27 @@
+Depends: 
+    parallel,
+    gtools,
+    R (>= 4.0.0)
+Imports: 
+    GiRaF,
+    MASS,
+    Matrix,
+    mclust,
+    methods,
+    purrr,
+    utils,
+    Seurat,
+    cowplot,
+    patchwork,
+    scater,
+    pbapply, 
+    ggthemes, 
+    dplyr,
+    ggplot2,
+    stats,
+    DR.SC, 
+    scales,
+    ggpubr,
+    graphics,
+    colorspace,
+    Rcpp (>= 1.0.5)
