@@ -1,29 +1,16 @@
 # Benchmarking for algorithms of spatially resolved transcriptomics data alignment and integration
-We collected 149 real spatial transcriptome data to benchmark 7 methods for aligning slices and integrating data.
-7 methods are included:
-   * PASTE: Alignment and Integration of Spatial Transcriptomics Data
-   * PASTE2: PASTE2: Partial Alignment of Multi-slice Spatially Resolved Transcriptomics Data
-   * GPSA: Alignment of spatial genomics data using deep Gaussian processes
-   * PRECAST: Probabilistic embedding, clustering, and alignment for integrating spatial transcriptomics data with PRECAST
-   * SPIRAL: Integrating and aligning spatially resolved transcriptomics data across different experiments, conditions, and technologies
-   * STAligner: Integrating spatial transcriptomics data across different conditions, technologies and developmental stages
-   * STitch3D: Construction of a 3D whole organism spatial atlas by joint modelling of multiple slices with deep neural networks    
 
-## Overview
-The main work is as follows.
-### Benchmark on different spatial transcriptome data
-7 computational methods were benchmarked on 17 experiment form different spatial transcriptome technologies (10x Visium, ST, Slide-Seq, Stero-Seq). The benchmark encompassed 8 different metrics to assess the methods performance in terms of alignment accuracy, spatial coherence, cluster accuracy, and integration performance. The metrics included mapping accuracy, Label Transfer ARI (LTARI), spatial coherence score (SCS), ARI, NMI, F1 scores, integration LISI(iLISI) and cell-type LISI (cLISI).
- 
- |Alignment accuracy  | Spatial coherence  | Clustering accuracy  | Integration performance|
- | :--: | :--: | :--: | :--: |  
- |mapping accuracy， LTARI | SCS | ARI, NMI| F1 scores, iLISI, cLISI |
+<img width="904" height="408" alt="image" src="https://github.com/user-attachments/assets/d7e09717-43e5-4dc3-8f2a-c7fb6031b82e" />
+
+### Description
+We benchmarked nine existing methods for spatial transcriptomics slice integration using 20 real-world and simulated datasets by evaluating their alignment accuracy, integration effectiveness, and robustness. For alignment accuracy, we assessed slice alignment performance using mapping accuracy. For integration effectiveness, we employed multiple metrics: Spatial coherence score to evaluate spatial consistency preservation; Adjusted Rand Index (ARI) and normalized mutual information (NMI) to measure clustering precision; F1 scores, integration LISI (iLISI), and cell-type LISI (cLISI) in the embedding space to quantify batch effect removal. For robustness, we designed experiments under the following conditions: (1) Simulating Dropout Events: For gene expression data, we randomly selected proportions (20%, 40%, and 60%) of non-zero values and set them to zero, mimicking inherent and widespread technical dropout events. This tested the methods' performance on datasets with sparse gene expression due to random information loss. (2) Simulating Sequencing Depth Variations: We performed subsampling at 20%, 40%, and 60% levels (i.e., retaining 80%, 60%, and 40% of spots) on both the gene expression matrix and spatial coordinates to simulate varying sequencing depths, respectively. This evaluated the methods' ability to handle datasets with significant differences in sequencing depth.
 
 ### Dependencies and requirements for slices alignment
-Before you run the pipeline, please make sure that you have installed and python3, R(4.3.1) and all the five packages(paste, paste2, gpsa, spiral, staligner): 
+Before you run the pipeline, please make sure that you have installed and python3, R(4.3.1) and all the nine packages (paste, paste2, st-gears, gpsa, precast, spiral, staligner, stitch3d, staig): 
 
 1.Before the installation of these packages, please install Miniconda to manage all needed software and dependencies. You can download Miniconda from https://conda.io/miniconda.html.
 
-2.Download SpatialBenchmarking.zip from https://github.com/ . . . /SRTBenchmarking. Unzipping this package and you will see Benchmarkingenvironment.yml and Config.env.sh located in its folder.
+2.Download SpatialBenchmarking.zip from https://github.com/Xu-0001/Benchmarking/. Unzipping this package and you will see Benchmarkingenvironment.yml and Config.env.sh located in its folder.
 
 3.Build isolated environment for SpatialBenchmarking: conda env create -f Benchmarkingenvironment.yml
 
@@ -31,10 +18,10 @@ Before you run the pipeline, please make sure that you have installed and python
 
 5.sh Config.env.sh
 
-6.Enter R and install required packages by command : install.packages("xxx")
+6.Enter R and install required packages by command
 
 ### Dependencies and requirements for data integration
-Before you run the pipeline, please make sure that you have installed and python3, R(4.3.1) and all the five packages(paste, precast, spiral, staligner, stitch3d): 
+Before you run the pipeline, please make sure that you have installed and python3, R(4.3.1) and all the nine packages(paste, paste2, st-gears, gpsa, precast, spiral, staligner, stitch3d, staig): 
 The package has been tested on Linux system and should work in any valid python environment.
 ## Tutorial
 If you want to analysis your own data, the doc/Tutorial.ipynb is an example showing how to use them to predict new slices alignment and data integration.
