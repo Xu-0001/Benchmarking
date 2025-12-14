@@ -10,7 +10,7 @@ Before you run the pipeline, please make sure that you have installed and python
 
 1.Before the installation of these packages, please install Miniconda to manage all needed software and dependencies. You can download Miniconda from https://conda.io/miniconda.html.
 
-2.Download SpatialBenchmarking.zip from https://github.com/Xu-0001/Benchmarking/. Unzipping this package and you will see Benchmarkingenvironment.yml and Config.env.sh located in its folder.
+2.Download Benchmarking.zip from https://github.com/Xu-0001/Benchmarking/. Unzipping this package and you will see Benchmarkingenvironment.yml and Config.env.sh located in its folder.
 
 3.Build isolated environment for SpatialBenchmarking: conda env create -f Benchmarkingenvironment.yml
 
@@ -23,7 +23,11 @@ Before you run the pipeline, please make sure that you have installed and python
 ### Dependencies and requirements for data integration
 Before you run the pipeline, please make sure that you have installed and python3, R(4.3.1) and all the nine packages(paste, paste2, st-gears, gpsa, precast, spiral, staligner, stitch3d, staig): 
 The package has been tested on Linux system and should work in any valid python environment.
+
 ## Tutorial
-If you want to analysis your own data, the doc/Tutorial.ipynb is an example showing how to use them to predict new slices alignment and data integration.
-## Datasets
-All datasets used are publicly available data, for convenience datasets can be downloaded from:
+If you want to analysis your own data, the doc/Tutorial.ipynb is an example showing how to use them for aligning and integrating new slices.
+
+You also can run the jupyter notebook of BLAST_GenePrediction.ipynb and BLAST_CelltypeDeconvolution.ipynb to reproduce the results of figure2&4 in our paper.
+
+For more details, please see the Alignment.py & Integration.py in Benchmarking directory.
+
