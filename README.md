@@ -24,7 +24,7 @@ Before you run the pipeline, please make sure that you have installed and python
 Before you run the pipeline, please make sure that you have installed and python3, R(4.3.1) and all the nine packages(paste, paste2, st-gears, gpsa, precast, spiral, staligner, stitch3d, staig): 
 The package has been tested on Linux system and should work in any valid python environment.
 
-## Tutorial
+### Tutorial
 If you want to analysis your own data, the doc/Tutorial.ipynb is an example showing how to use them for aligning and integrating new slices.
 
 You also can run the jupyter notebook of BLAST_GenePrediction.ipynb and BLAST_CelltypeDeconvolution.ipynb to reproduce the results of figure2&4 in our paper.
